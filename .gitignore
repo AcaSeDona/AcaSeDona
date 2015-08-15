@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+.idea
+.env
+/client/bower_components
+/client/node_modules
+/client/.sass-cache
+/vendor
+composer.phar
+composer.lock

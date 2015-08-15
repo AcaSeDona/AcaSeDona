@@ -1,0 +1,85 @@
+html, body {
+  font-family: $lato;
+  background: $greenBlue;
+}
+
+.container {
+  margin: 20px auto 50px;
+  h1 {
+    @include size(295px, 100px);
+    background: url('../images/acasedona.png') no-repeat center center;
+    background-size: cover;
+    text-indent: -9999px;
+    margin: 0 auto;
+  }
+  p {
+    &.text {
+      color: $yellow;
+      font-size: 20px;
+      padding-top: 20px;
+    }
+  }
+  span {
+    &.text {
+      color: $red;
+      font-size: 22px;
+      font-weight: $latoBold;
+      margin-bottom: 20px;
+      display: block;
+    }
+  }
+  .alert_success {
+    padding: 10px;
+    background: $yellow;
+    color: $greenBlue;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.twitter-share-button {
+  margin-bottom: -10px;
+  margin-right: 20px;
+}
+.fb-share-button {
+  margin-bottom: 10px;
+}
+
+footer {
+  line-height: 30px;
+  text-align: center;
+  background: $marineBlue;
+  color: $yellow;
+  font-weight: $latoBold;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  span {
+    font-size: 1.7em;
+  }
+  a {
+    display: inline-block;
+    padding: 0 5px;
+    color: $yellow;
+    text-decoration: none;
+    &:hover {
+      color: $yellow;
+      text-decoration: none;
+    }
+  }
+  .about {
+    max-width: 600px;
+    font-size: 12px;
+    margin: 30px auto 0;
+    padding: 20px;
+    border-radius: 5px;
+    background: $lightBlue;
+    line-height: 16px;
+    text-align: justify;
+    color: $marineBlue;
+    b {
+      display: block;
+      font-weight: $latoBold;
+      text-align: center;
+    }
+  }
+}

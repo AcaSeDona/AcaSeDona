@@ -1,0 +1,9 @@
+#map {
+  @include size(100%, 400px);
+}
+
+@media only screen and (max-width : 600px) {
+  #map {
+    @include size(100%, 250px);
+  }
+}

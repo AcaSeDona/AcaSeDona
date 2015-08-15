@@ -1,0 +1,92 @@
+<div id="map"></div>
+
+<div class="container row">
+    <div class="col-md-4">
+        <h1>#AcaSeDona</h1>
+        <p class="text">Armemos un mapa que muestre todos los lugares que reciben ayuda para los inundados.</p>
+    </div>
+
+    <div class="col-md-8">
+        <span class="text">¡Completá el formulario!</span>
+
+        {{#flash}}
+        <div class="alert_success">
+            El centro de donación que cargaste ya se marcó en el mapa.
+            <br>
+            ¡Muchas gracias!
+        </div>
+        {{/flash}}
+
+        <form method="post" action="send-place">
+            <div class="form-group">
+                <label for="name">Nombre del lugar</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Nombre del lugar">
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-8">
+                    <label for="address">Dirección</label>
+                    <input type="text" class="form-control" name="calle" id="calle" placeholder="Calle">
+                </div>
+                <div class="form-group col-xs-4">
+                    <label>&nbsp;</label>
+                    <input type="text" class="form-control" name="altura" id="altura" placeholder="Altura">
+                </div>
+                <div class="form-group col-xs-6">
+                    <input type="text" class="form-control" name="ciudad" id="ciudad" placeholder="Ciudad">
+                </div>
+                <div class="form-group col-xs-6">
+                    <select class="form-control" name="provincia">
+                        <option value="Capital Federal">Capital Federal</option>
+                        <option value="Provincia de Buenos Aires">Buenos Aires</option>
+                        <option value="Provincia de Catamarca">Catamarca</option>
+                        <option value="Provincia de Chaco">Chaco</option>
+                        <option value="Provincia de Chubut">Chubut</option>
+                        <option value="Provincia de Cordoba">Cordoba</option>
+                        <option value="Provincia de Corrientes">Corrientes</option>
+                        <option value="Provincia de Entre Rios">Entre Rios</option>
+                        <option value="Provincia de Formosa">Formosa</option>
+                        <option value="Provincia de Jujuy">Jujuy</option>
+                        <option value="Provincia de La Pampa">La Pampa</option>
+                        <option value="Provincia de La Rioja">La Rioja</option>
+                        <option value="Provincia de Mendoza">Mendoza</option>
+                        <option value="Provincia de Misiones">Misiones</option>
+                        <option value="Provincia de Neuquen">Neuquen</option>
+                        <option value="Provincia de Rio Negro">Rio Negro</option>
+                        <option value="Provincia de Salta">Salta</option>
+                        <option value="Provincia de San Juan">San Juan</option>
+                        <option value="Provincia de San Luis">San Luis</option>
+                        <option value="Provincia de Santa Cruz">Santa Cruz</option>
+                        <option value="Provincia de Santa Fe">Santa Fe</option>
+                        <option value="Provincia de Santiago del Estero">Santiago del Estero</option>
+                        <option value="Provincia de Tierra del Fuego">Tierra del Fuego</option>
+                        <option value="Provincia de Tucuman">Tucuman</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="start_hour">Horario y días de atención</label>
+                </div>
+                <div class="form-group col-xs-4 bootstrap-timepicker">
+                    <input type="text" class="form-control timepicker" name="start_hour" id="start_hour">
+                </div>
+                <div class="form-group col-xs-4 bootstrap-timepicker">
+                    <input type="text" class="form-control timepicker" name="end_hour" id="end_hour">
+                </div>
+                <div class="form-group col-xs-4">
+                    <input type="text" class="form-control" name="days" id="days" placeholder="Días de atención">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="contact">Comentarios</label>
+                <textarea name="comments" class="form-control" rows="5"
+                          placeholder="(Tipo de donaciones, cuenta bancaria donde se reciben donaciones, persona de contacto, teléfono)"></textarea>
+            </div>
+            <div class="form-group">
+                <div class="g-recaptcha" data-sitekey="{{ recaptcha_public }}"></div>
+            </div>
+            <button type="submit" class="btn btn-warning">Agregar Centro de Donación</button>
+        </form>
+
+    </div>
+</div>

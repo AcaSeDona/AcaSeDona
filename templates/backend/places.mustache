@@ -1,0 +1,28 @@
+<h1>Lugares para realizar donaciones <small>{{ total_places }}</small></h1>
+
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Dirección</th>
+                <th>Horario</th>
+                <th>Comentarios</th>
+                <th class="hidden-print">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#places}}
+            <tr>
+                <th scope="row">{{ name }}</th>
+                <td>{{ address }}</td>
+                <td>{{ start_hour }} - {{ end_hour }} - {{ days }}</td>
+                <td>{{ comments }}</td>
+                <td class="hidden-print">
+                    <a class="btn btn-danger" href="{{ base_path }}backend/hide_place/{{ id }}" onclick="return confirm('¿Querés ocultar \'{{ name }}\' en el mapa?')">Ocultar</a>
+                </td>
+            </tr>
+            {{/places}}
+        </tbody>
+    </table>
+</div>

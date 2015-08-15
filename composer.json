@@ -1,0 +1,45 @@
+{
+  "name": "acasedona",
+  "description": "#AcaSeDona",
+  "authors": [
+    {
+      "name": "Tineia @celestineia",
+      "role": "Idea"
+    },
+    {
+      "name": "Martu Johansen @martujohansen",
+      "role": "Press"
+    },
+    {
+      "name": "Ale Mohamad @alemohamad",
+      "role": "Developer"
+    },
+    {
+      "name": "Andres Snitcofsky @rusosnith",
+      "role": "Designer"
+    }
+  ],
+  "require": {
+    "mikecao/flight": "1.*",
+    "xmeltrut/wing-commander": "1.1.*",
+    "phpmailer/phpmailer": "5.2.*",
+    "illuminate/database": "4.2.*",
+    "martyix/googl-php": "1.0.*",
+    "google/recaptcha": "~1.1",
+    "jstayton/google-maps-geocoder": "2.2.*",
+    "cocur/slugify": "1.2",
+    "snipe/banbuilder": "2.2.*",
+    "tamtamchik/simple-flash": "0.4.*",
+    "vlucas/phpdotenv": "2.0.*"
+  },
+  "minimum-stability": "dev",
+  "autoload": {
+    "files": [
+      "AcaSeDona/Support/helpers.php",
+      "AcaSeDona/Support/database.php"
+    ],
+    "psr-4": {
+      "AcaSeDona\\": "AcaSeDona"
+    }
+  }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>#AcaSeDona</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta name="description" content="">
+
+    <!-- Facebook OpenGraph -->
+    <meta property="og:title" content="#AcaSeDona">
+    <meta property="og:description" content="Acá Se Dona es un mapa colaborativo que junta todos los puntos en donde se reciben donaciones en el mismo lugar. ¡Ayudemos a ayudar!">
+    <meta property="og:url" content="http://www.acasedona.com.ar/">
+    <meta property="fb:app_id" content="1574437776138087">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://www.acasedona.com.ar/assets/images/acasedona-fb.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@acasedona">
+    <meta name="twitter:creator" content="@acasedona">
+    <meta name="twitter:url" content="http://www.acasedona.com.ar/">
+    <meta name="twitter:title" content="#AcaSeDona">
+    <meta name="twitter:description" content="Acá Se Dona es un mapa colaborativo que junta todos los puntos en donde se reciben donaciones en el mismo lugar. ¡Ayudemos a ayudar!">
+    <meta name="twitter:image" content="http://www.acasedona.com.ar/assets/images/acasedona-tw.png">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="#AcaSeDona">
+    <meta itemprop="description" content="Acá Se Dona es un mapa colaborativo que junta todos los puntos en donde se reciben donaciones en el mismo lugar. ¡Ayudemos a ayudar!">
+    <meta itemprop="image" content="http://www.acasedona.com.ar/assets/images/acasedona-fb.png">
+
+    <link href="{{ asset_favicon }}" rel="shortcut icon">
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" media="all" href="{{ asset_css }}">
+
+    <script>
+        var url_website = '{{ url_website }}';
+    </script>
+
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src='https://www.google.com/recaptcha/api.js?hl=es'></script>
+    <script src="{{ asset_js_vendors }}"></script>
+    <script src="{{ asset_js }}"></script>
+</head>
+
+<body>
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.4&appId=459398337567208";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    {{{ yield }}}
+
+    {{{ flowics }}}
+
+    <footer>
+        <a href="https://twitter.com/hashtag/AcaSeDona?src=hash" target="_blank">#AcaSeDona</a>
+        <a href="https://twitter.com/AcaSeDona" target="_blank"><span><i class="fa fa-twitter"></i></span> @AcaSeDona</a>
+
+        <br>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.AcaSeDona.com.ar/" data-text="¡Armemos un mapa que muestre todos los lugares que reciben ayuda para los inundados! Colaborá en" data-lang="es" data-related="AcaSeDona" data-hashtags="AcaSeDona">Twittear</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+        <div class="fb-share-button" data-href="http://www.acasedona.com.ar/" data-layout="button_count"></div>
+        <br>
+
+        <a href="https://twitter.com/celestineia" target="_blank">@celestineia</a>
+        <a href="https://twitter.com/martujohansen" target="_blank">@martujohansen</a>
+        <a href="https://twitter.com/alemohamad" target="_blank">@alemohamad</a>
+        <a href="https://twitter.com/rusosnith" target="_blank">@rusosnith</a>
+
+        <br>
+
+        <div class="about">
+            <b>#AcaSeDona: el sitio para ayudar a los inundados</b><br>
+            AcaSeDona.com.ar es un proyecto que surgió con el fin de unificar la información sobre centros que reciben donaciones para los inundados.<br>
+            Se trata de un mapa colaborativo en el que cualquier persona puede agregar puntos de donación de todo el país como colegios, iglesias, universidades y clubes de barrio.<br>
+            La georeferencia permite que los usuarios puedan detectar fácilmente cuáles son los lugares cercanos para poder acercarse a donar en su barrio.<br>
+            Para agregar un punto sólo hace falta ingresar a AcaSeDona.com.ar y llenar un breve formulario que incluye datos como dirección y horarios en los que se reciben las donaciones.<br>
+            Primero se charló entre @Martujohansen y @celestineia. Una vez que acordaron cómo sería el sitio, rápidamente sumaron a un diseñador (@rusosnith) y a un desarrollador (@alemohamad), y en 22 hs (exactas) tenían funcionando el sitio sin haberse reunido ni una sola vez.
+        </div>
+    </footer>
+
+    {{{ analytics }}}
+
+</body>
+</html>
