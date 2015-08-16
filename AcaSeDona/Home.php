@@ -26,6 +26,10 @@ class Home {
         Flight::view()->set("asset_js_vendors", getAssetUrl("assets/js/vendors.js"));
         Flight::view()->set("asset_js", getAssetUrl("assets/js/app.js"));
 
+        Flight::view()->set("asset_share_fb", getAssetUrl("assets/images/acasedona-fb.png"));
+        Flight::view()->set("asset_share_tw", getAssetUrl("assets/images/acasedona-tw.png"));
+        Flight::view()->set("asset_share_gp", getAssetUrl("assets/images/acasedona-fb.png"));
+
         Flight::render('flowics', array(), 'flowics');
         Flight::render('analytics', array(), 'analytics');
         Flight::render('header', array(), 'header');
