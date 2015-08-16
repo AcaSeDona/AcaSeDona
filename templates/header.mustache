@@ -22,13 +22,17 @@
         <div class="col-md-8">
             <p class="text hidden-xs hidden-sm">Armemos un mapa que muestre todos los lugares que reciben ayuda para los inundados.</p>
             <div class="row">
-                <div class="col-xs-6">
-                    <input class="form-control search-places hidden-xs hidden-sm" type="search" data-provide="typeahead" autocomplete="off" placeholder="Buscar centro de donación">
-                    <input class="form-control search-places hidden-md hidden-lg" type="search" data-provide="typeahead" autocomplete="off" placeholder="Buscar centro">
+                <div class="col-xs-4 col-md-3">
+                    <button class="form-control btn btn-success current-location hidden-xs hidden-sm"><i class="fa fa-map-marker"></i> ¿Dónde estoy?</button>
+                    <button class="form-control btn btn-success current-location hidden-md hidden-lg"><i class="fa fa-map-marker"></i></button>
                 </div>
-                <div class="col-xs-6">
+                <div class="col-xs-4 col-md-5">
+                    <input class="form-control search-places hidden-xs hidden-sm" type="search" data-provide="typeahead" autocomplete="off" placeholder="Buscar centro de donación">
+                    <input class="form-control search-places hidden-md hidden-lg" type="search" data-provide="typeahead" autocomplete="off" placeholder="Buscar">
+                </div>
+                <div class="col-xs-4 col-md-4">
                     <button class="form-control btn btn-danger show-form hidden-xs hidden-sm">Agregá un centro de donación</button>
-                    <button class="form-control btn btn-danger show-form hidden-md hidden-lg">Agregar centro</button>
+                    <button class="form-control btn btn-danger show-form hidden-md hidden-lg">Agregar</button>
                 </div>
             </div>
         </div>
