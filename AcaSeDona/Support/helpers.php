@@ -11,10 +11,10 @@ if ( ! function_exists('getBasePath'))
     {
         if (strlen(Flight::request()->base) == 1)
         {
-            return '/';
+            return getWebsiteUrl() . '/';
         }
 
-        return Flight::request()->base . '/';
+        return getWebsiteUrl() . Flight::request()->base . '/';
     }
 }
 
@@ -78,6 +78,31 @@ if ( ! function_exists('http_login'))
                 exit;
             }
         }
+    }
+}
 
+
+if ( ! function_exists('getWebsiteUrl'))
+{
+    /**
+     * getWebsiteUrl
+     *
+     * @return string
+     */
+    function getWebsiteUrl($cache = true)
+    {
+        $url = $_SERVER['SERVER_NAME'];
+        $final_url = 'd2gkk86dhibgth.cloudfront.net'; // cached assets
+        $final_url = $url; // super hot fix, for cached issue
+
+        if(strpos($url, 'acasedona.com.ar') === false) {
+            $final_url = $url;
+        }
+
+        if($cache === false) {
+            $final_url = $url;
+        }
+
+        return "http://{$final_url}";
     }
 }

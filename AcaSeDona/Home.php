@@ -16,7 +16,7 @@ class Home {
         }
 
         Flight::view()->set("base_path", getBasePath());
-        Flight::view()->set("url_website", "http://{$_SERVER['SERVER_NAME']}/");
+        Flight::view()->set("url_website", getWebsiteUrl(false) . '/');
         Flight::view()->set("recaptcha_public", getenv('RECAPTCHA_PUBLIC'));
         Flight::view()->set("ga_code", getenv('GOOGLE_ANALYTICS'));
 
@@ -28,6 +28,7 @@ class Home {
 
         Flight::render('flowics', array(), 'flowics');
         Flight::render('analytics', array(), 'analytics');
+        Flight::render('header', array(), 'header');
         Flight::render('home', array(), 'yield');
         Flight::render('layout', array());
     }
@@ -83,19 +84,23 @@ class Home {
             $complete = "<strong>{$place['name']}</strong>";
             $complete .= "<br>{$place['address']}";
 
-            if ( ! empty($place['comments']))
-                $complete .= "<br><br>{$place['comments']}";
-
             if ( ! empty($place['start_hour']))
             {
-                $complete .= "<br><br>{$place['start_hour']}";
+                $complete .= "<br><small><u>Horario:</u> ";
+                $complete .= "{$place['start_hour']}";
                 if ( ! empty($place['end_hour']) && $place['start_hour'] != $place['end_hour'])
                     $complete .= " - {$place['end_hour']}";
                 if ( ! empty($place['days']))
                     $complete .= " - {$place['days']}";
+                $complete .= "</small>";
             }
 
+            if ( ! empty($place['comments']))
+                $complete .= "<br><br>{$place['comments']}";
+
             $place['complete'] = $complete;
+
+            $place['name'] = "{$place['name']} - {$place['address']}";
 
             $final_list[] = $place;
         }

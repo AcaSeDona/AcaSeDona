@@ -1,0 +1,40 @@
+header {
+  height: 110px;
+  z-index: 9999;
+  position: relative;
+  background: $greenBlue;
+  .container {
+    h1 {
+      @include size(236px, 80px);
+      background: url('../images/acasedona.png') no-repeat center center;
+      background-size: cover;
+      text-indent: -9999px;
+      margin: 0 auto;
+    }
+    p {
+      &.text {
+        color: $yellow;
+        font-size: 19px;
+        padding-top: 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  header {
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  header {
+    .container {
+      p {
+        &.text {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}

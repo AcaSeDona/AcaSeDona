@@ -89,6 +89,7 @@ going to change the file structure at the `client/js` folder.
 * [html5shiv](https://github.com/afarkas/html5shiv)
 * [gmaps.js](https://hpneo.github.io/gmaps/)
 * [Bootstrap Timepicker](http://jdewit.github.io/bootstrap-timepicker/)
+* [Typeahead for Bootstrap 3](https://github.com/bassjobsen/Bootstrap-3-Typeahead)
 * [Sharrre](http://sharrre.com/)
 
 ### NodeJS packages used in this project

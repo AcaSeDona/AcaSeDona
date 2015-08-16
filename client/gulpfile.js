@@ -23,7 +23,8 @@ var jsvendor_files = [
     //config.pathBower + '/jquery-cycle2/build/jquery.cycle2.min.js',
     config.pathBower + '/gmaps/gmaps.min.js',
     //config.pathBower + '/sharrre/jquery.sharrre.min.js'
-    config.pathBower + '/bootstrap-timepicker/js/bootstrap-timepicker.js'
+    config.pathBower + '/bootstrap-timepicker/js/bootstrap-timepicker.js',
+    config.pathBower + '/bootstrap3-typeahead/bootstrap3-typeahead.min.js'
 ];
 
 gulp.task('vendor-scripts', function () {
@@ -32,8 +33,9 @@ gulp.task('vendor-scripts', function () {
         .pipe(concat('vendors.js'))
         .pipe(gulp.dest('../assets/js'))
         .pipe(notify({
-            title: 'Donaciones Inundaciones',
-            message: 'Vendor scripts published.'
+            title: '#AcaSeDona',
+            message: 'Vendor scripts published.',
+            icon: 'icon.png'
         }));
 });
 
@@ -47,8 +49,9 @@ gulp.task('js', function () {
         .pipe(concat('app.js'))
         .pipe(gulp.dest('../assets/js'))
         .pipe(notify({
-            title: 'Donaciones Inundaciones',
-            message: 'Minified scripts published.'
+            title: '#AcaSeDona',
+            message: 'Minified scripts published.',
+            icon: 'icon.png'
         }));
 });
 
@@ -59,8 +62,9 @@ gulp.task('sass', function () {
         .pipe(minifycss({keepSpecialComments: 0}))
         .pipe(gulp.dest('../assets/css'))
         .pipe(notify({
-            title: 'Donaciones Inundaciones',
-            message: 'Sass styles published.'
+            title: '#AcaSeDona',
+            message: 'Sass styles published.',
+            icon: 'icon.png'
         }));
 });
 
@@ -68,8 +72,9 @@ gulp.task('deploy-fontawesome-icons', function () {
     return gulp.src(config.pathBower + '/fontawesome/fonts/**.*')
         .pipe(gulp.dest('../assets/fonts'))
         .pipe(notify({
-            title: 'Donaciones Inundaciones',
-            message: 'Font Awesome fonts published.'
+            title: '#AcaSeDona',
+            message: 'Font Awesome fonts published.',
+            icon: 'icon.png'
         }));
 });
 

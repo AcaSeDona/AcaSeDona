@@ -14,15 +14,16 @@ function loadResults (data) {
                 var icon = url_website + 'assets/images/marker.png';
 
                 markers_data.push({
+                    id : item.id,
                     lat : item.lat,
                     lng : item.long,
-                    title : item.name,
+                    //title : item.name,
                     icon : {
                         size : new google.maps.Size(32, 32),
                         url : icon
                     },
                     infoWindow: {
-                        content: '<p><strong>' + item.name + '</strong><br>' + item.address + '<br><br>' + item.comments + '</p>'
+                        content: '<p>' + item.complete + '</p>'
                     }
                 });
             }
@@ -33,27 +34,12 @@ function loadResults (data) {
 }
 
 $(document).ready(function () {
-    //$('#share').sharrre({
-    //    share: {
-    //        facebook: true,
-    //        twitter: true
-    //    },
-    //    buttons: {
-    //        facebook: {
-    //            lang: 'es'
-    //        },
-    //        twitter: {
-    //            lang: 'es'
-    //        }
-    //    },
-    //    url: 'http://www.acasedona.com.ar/'
-    //});
-
     map = new GMaps({
         div: '#map',
         lat: -34.6036844,
         lng: -58.381559100000004,
-        zoom: 8
+        scrollwheel: false,
+        zoom: 9
     });
 
     map.addStyle({
@@ -79,5 +65,51 @@ $(document).ready(function () {
         }
     });
 
+    // resize map height
+    $(window).on("resize", function() {
+        $('#map').css({'height': window.innerHeight - 160});
+    });
+
+    // trigger resize
+    $(window).resize();
+
     $('.timepicker').timepicker();
+
+    GMaps.prototype.markerById=function(id){
+        for(var m=0;m<this.markers.length;++m){
+            if(this.markers[m].get('id')===id){
+                return this.markers[m];
+            }
+        }
+        return new google.maps.Marker();
+    }
+
+    $.get(url_website + 'places', function(data){
+        $(".search-places").typeahead({
+            source: data,
+            updater: function(item) {
+                map.setCenter(item.lat, item.long);
+                map.setZoom(15);
+                google.maps.event.trigger(map.markerById(item.id), 'click');
+                $('.search-places').blur();
+                $('.search-places').delay(500).val('');
+            },
+            templates: {
+                empty: [
+                    '<div class="empty-message">No se encontraron centros</div>'
+                ].join('\n')
+            }
+        });
+    },'json');
+
+    $('.show-form').on('click', function() {
+        $('.floating-form').toggleClass('active');
+        if($('.floating-about').hasClass('active')) {
+            $('.floating-about').toggleClass('active');
+        }
+    });
+
+    $('.show-info').on('click', function() {
+        $('.floating-about').toggleClass('active');
+    });
 });

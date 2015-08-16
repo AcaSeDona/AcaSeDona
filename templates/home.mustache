@@ -1,23 +1,18 @@
 <div id="map"></div>
 
-<div class="container row">
-    <div class="col-md-4">
-        <h1>#AcaSeDona</h1>
-        <p class="text">Armemos un mapa que muestre todos los lugares que reciben ayuda para los inundados.</p>
+<div class="floating-form">
+    <span class="text text-center">¡Completá el formulario!</span>
+
+    {{#flash}}
+    <div class="alert_success">
+        El centro de donación que cargaste ya se marcó en el mapa.
+        <br>
+        ¡Muchas gracias!
     </div>
+    {{/flash}}
 
-    <div class="col-md-8">
-        <span class="text">¡Completá el formulario!</span>
-
-        {{#flash}}
-        <div class="alert_success">
-            El centro de donación que cargaste ya se marcó en el mapa.
-            <br>
-            ¡Muchas gracias!
-        </div>
-        {{/flash}}
-
-        <form method="post" action="send-place">
+    <form method="post" action="send-place">
+        <div class="content">
             <div class="form-group">
                 <label for="name">Nombre del lugar</label>
                 <input type="text" class="form-control" name="name" id="name" placeholder="Nombre del lugar">
@@ -87,6 +82,21 @@
             </div>
             <button type="submit" class="btn btn-warning">Agregar Centro de Donación</button>
         </form>
-
     </div>
+</div>
+
+<div class="floating-about">
+    <div class="about">
+        <b>#AcaSeDona: el sitio para ayudar a los inundados</b><br>
+        AcaSeDona.com.ar es un proyecto que surgió con el fin de unificar la información sobre centros que reciben donaciones para los inundados.<br>
+        Se trata de un mapa colaborativo en el que cualquier persona puede agregar puntos de donación de todo el país como colegios, iglesias, universidades y clubes de barrio.<br>
+        La georeferencia permite que los usuarios puedan detectar fácilmente cuáles son los lugares cercanos para poder acercarse a donar en su barrio.<br>
+        Para agregar un punto sólo hace falta ingresar a AcaSeDona.com.ar y llenar un breve formulario que incluye datos como dirección y horarios en los que se reciben las donaciones.<br>
+        Primero se charló entre @Martujohansen y @celestineia. Una vez que acordaron cómo sería el sitio, rápidamente sumaron a un diseñador (@rusosnith) y a un desarrollador (@alemohamad), y en 22 hs (exactas) tenían funcionando el sitio sin haberse reunido ni una sola vez.<br><br>
+        <button class="form-control btn small btn-primary show-info">Cerrar info</button>
+    </div>
+
+    <br><br>
+
+    {{{ flowics }}}
 </div>
