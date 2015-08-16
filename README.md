@@ -40,6 +40,14 @@ $ composer install
 * [Simple Flash](https://github.com/tamtamchik/simple-flash)
 * [phpdotenv](https://github.com/vlucas/phpdotenv)
 
+## Database (schema with Eloquent)
+
+If you want to use the table that this project uses, you can do so at the `AcaSeDona/Support/database.php` file.
+
+You have to change the variable `$create_tables` to `true`. The next time you visit the website (with the correct database connection information), the table will be created.
+
+But after you created the table you have to change back the variable `$create_tables` to false, because the system will try to create the already created table again.
+
 ## Assets Management (Gulp + NodeJS)
 
 This project uses **Gulp** to compile its assets (Sass + JS).
