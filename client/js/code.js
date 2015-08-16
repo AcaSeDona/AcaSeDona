@@ -2,6 +2,23 @@ var map;
 
 var map_theme = [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#dde6e8"},{"visibility":"on"}]}];
 
+function displayCurrentLocation(zoom) {
+    GMaps.geolocate({
+        success: function (position) {
+            map.setCenter(position.coords.latitude, position.coords.longitude);
+            if(zoom) {
+                map.setZoom(14);
+            }
+        },
+        error: function (error) {
+            console.log('Geolocation failed: ' + error.message);
+        },
+        not_supported: function () {
+            console.log("Your browser does not support geolocation");
+        }
+    });
+}
+
 function loadResults (data) {
     var items, markers_data = [];
     if (data.length > 0) {
@@ -53,17 +70,7 @@ $(document).ready(function () {
     var xhr = $.getJSON(url_website + 'places');
     xhr.done(loadResults);
 
-    GMaps.geolocate({
-        success: function (position) {
-            map.setCenter(position.coords.latitude, position.coords.longitude);
-        },
-        error: function (error) {
-            console.log('Geolocation failed: ' + error.message);
-        },
-        not_supported: function () {
-            console.log("Your browser does not support geolocation");
-        }
-    });
+    displayCurrentLocation(false);
 
     // resize map height
     $(window).on("resize", function() {
@@ -111,5 +118,9 @@ $(document).ready(function () {
 
     $('.show-info').on('click', function() {
         $('.floating-about').toggleClass('active');
+    });
+
+    $('.current-location').on('click', function() {
+        displayCurrentLocation(true);
     });
 });
