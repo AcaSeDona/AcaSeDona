@@ -26,5 +26,7 @@ Flight::route('/places', array('AcaSeDona\Home', 'display_places'));
 
 Flight::route('/backend/places', array('AcaSeDona\Backend', 'places'));
 Flight::route('/backend/hide_place/@id', array('AcaSeDona\Backend', 'hide_place'));
+Flight::route('GET /backend/place/@id', array('AcaSeDona\Backend', 'edit_place'));
+Flight::route('POST /backend/place/@id', array('AcaSeDona\Backend', 'update_place'));
 
 Flight::start();

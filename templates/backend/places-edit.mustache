@@ -1,0 +1,32 @@
+<h1>Modificar lugar</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="name">Nombre del lugar</label>
+        <input name="name" type="text" class="form-control" id="name" value="{{ place_name }}">
+    </div>
+    <div class="form-group">
+        <label for="address">Dirección</label>
+        <input name="address" type="text" class="form-control" id="address" value="{{ place_address }}">
+    </div>
+    <div class="form-group">
+        <label>Horario y días de atención</label>
+        <div class="row">
+            <div class="col-md-4">
+                <input name="start_hour" type="text" class="form-control" placeholder="Horario de inicio" value="{{ place_start_hour }}">
+            </div>
+            <div class="col-md-4">
+                <input name="end_hour" type="text" class="form-control" placeholder="Horario de finalización" value="{{ place_end_hour }}">
+            </div>
+            <div class="col-md-4">
+                <input name="days" type="text" class="form-control" placeholder="Días de atención" value="{{ place_days }}">
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="comments">Comentarios</label>
+        <textarea name="comments" id="comments" class="form-control" rows="5">{{ place_comments }}</textarea>
+    </div>
+    <button type="submit" class="btn btn-default">Actualizar lugar</button>
+    <a href="{{ basepath }}backend/places" class="btn btn-link">Cancelar</a>
+</form>

@@ -18,7 +18,8 @@
                 <td>{{ address }}</td>
                 <td>{{ start_hour }} - {{ end_hour }} - {{ days }}</td>
                 <td>{{ comments }}</td>
-                <td class="hidden-print">
+                <td class="hidden-print text-right" style="width: 200px;">
+                    <a class="btn btn-info" href="{{ base_path }}backend/place/{{ id }}">Actualizar</a>
                     <a class="btn btn-danger" href="{{ base_path }}backend/hide_place/{{ id }}" onclick="return confirm('¿Querés ocultar \'{{ name }}\' en el mapa?')">Ocultar</a>
                 </td>
             </tr>
