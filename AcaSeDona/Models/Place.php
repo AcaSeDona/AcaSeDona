@@ -16,13 +16,14 @@ class Place extends Eloquent {
 
     public function setNameAttribute($value)
     {
-        // censor name
-        $censor = new CensorWords;
-        $badwords = $censor->setDictionary(array('es','en-us', 'en-uk'));
-        $cname = $censor->censorString($value);
-        $name = $cname['clean'];
+        // // censor name
+        // $censor = new CensorWords;
+        // $badwords = $censor->setDictionary(array('es', 'en-us', 'en-uk'));
+        // $cname = $censor->censorString($value);
+        // $name = $cname['clean'];
 
-        $this->attributes['name'] = $name;
+        // $this->attributes['name'] = $name;
+        $this->attributes['name'] = $value;
 
         // generates uri slug
         $slugify = new Slugify();
@@ -34,19 +35,21 @@ class Place extends Eloquent {
 
     public function setAddressAttribute($value)
     {
-        // censor address
-        $censor = new CensorWords;
-        $badwords = $censor->setDictionary(array('es','en-us', 'en-uk'));
-        $caddress = $censor->censorString($value);
-        $address = $caddress['clean'];
+        // // censor address
+        // $censor = new CensorWords;
+        // $badwords = $censor->setDictionary(array('es','en-us', 'en-uk'));
+        // $caddress = $censor->censorString($value);
+        // $address = $caddress['clean'];
 
         // search coordinates with the provided address
         $Geocoder = new \GoogleMapsGeocoder();
-        $Geocoder->setAddress($address);
+        // $Geocoder->setAddress($address);
+        $Geocoder->setAddress($value);
         $response = $Geocoder->geocode();
 
         // defaults when the coordinates aren't found
-        $this->attributes['address'] = $address;
+        // $this->attributes['address'] = $address;
+        $this->attributes['address'] = $value;
         $this->attributes['lat'] = '-34.6036844';
         $this->attributes['long'] = '-58.381559100000004';
 
