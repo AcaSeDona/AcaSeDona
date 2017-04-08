@@ -19,6 +19,7 @@ class Home {
         Flight::view()->set("url_website", getWebsiteUrl(false) . '/');
         Flight::view()->set("recaptcha_public", getenv('RECAPTCHA_PUBLIC'));
         Flight::view()->set("ga_code", getenv('GOOGLE_ANALYTICS'));
+        Flight::view()->set("gm_api_key", getenv('GOOGLE_MAPS_API_KEY'));
 
         // layout assets
         Flight::view()->set("asset_favicon", getAssetUrl("assets/images/favicon.png"));
