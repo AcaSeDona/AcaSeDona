@@ -20,6 +20,8 @@ class Home {
         Flight::view()->set("recaptcha_public", getenv('RECAPTCHA_PUBLIC'));
         Flight::view()->set("ga_code", getenv('GOOGLE_ANALYTICS'));
 
+        Flight::view()->set("fb_app_id", getenv('FB_APP_ID'));
+
         // layout assets
         Flight::view()->set("asset_favicon", getAssetUrl("assets/images/favicon.png"));
         Flight::view()->set("asset_css", getAssetUrl("assets/css/app.css"));
