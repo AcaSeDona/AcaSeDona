@@ -11,7 +11,7 @@
     <meta property="og:title" content="#AcaSeDona">
     <meta property="og:description" content="Acá Se Dona es un mapa colaborativo que junta todos los puntos en donde se reciben donaciones en el mismo lugar. ¡Ayudemos a ayudar!">
     <meta property="og:url" content="http://www.acasedona.com.ar/">
-    <meta property="fb:app_id" content="1574437776138087">
+    <meta property="fb:app_id" content="{{ fb_app_id }}">
     <meta property="og:type" content="website">
     <meta property="og:image" content="{{ asset_share_fb }}">
 
@@ -51,7 +51,7 @@
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
             js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.4&appId=459398337567208";
+            js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.4&appId={{ fb_app_id }}";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
 
