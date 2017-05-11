@@ -18,7 +18,8 @@
 
 This project uses a `.env` file to manage passwords and keys configuration.
 
-You have to duplicate the `.env.example` file, and rename it `.env`. After this, complete with the correct information (database, backend, recaptcha, google analytics and facebook app id).
+
+You have to duplicate the `.env.example` file, and rename it `.env`. After this, complete with the correct information (database, backend, recaptcha, google analytics, google maps api and facebook app id).
 
 ## PHP Packages with Composer
 
